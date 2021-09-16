@@ -19,3 +19,5 @@ print(2**2);
 #all str are unicode in 3.x
 #Catenation + | Repetition * | Slicing [x:y] (negative slices from end)
 
+def PrintWord(w):
+    print(w);
