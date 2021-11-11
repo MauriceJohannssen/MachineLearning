@@ -12,9 +12,7 @@ import threading
 import time
 
 # Import TF model
-model = tf.keras.models.load_model(
-    'C:\\Users\\Mauri\\Repositories\\MachineLearning\\model\\RPS_CNN.h5')
-
+model = tf.keras.models.load_model('model\\RPS_CNN.h5')
 
 def ClassifyImage(image):
 
@@ -94,6 +92,7 @@ def Countdown():
         window.update()
         time.sleep(1)
         t -= 1
+    
     extract_stream_image()
 
 def extract_stream_image():
@@ -137,16 +136,12 @@ def show_frames():
     label.configure(image=imgtk)
     # Repeat tp capture all the time
     label.after(10, show_frames)
-
-def test():
-    TestThread = threading.Thread(target=Countdown)
-    TestThread.start()
-
+ 
 # Create UI elements
 myFont = font.Font(family='Bahnschrift')
 
 # Start button
-startButton = tk.Button(window, text='Play!', command=test,
+startButton = tk.Button(window, text='Play!', command=Countdown,
                         width=15, height=3, relief=tk.FLAT, bg='white')
 startButton['font'] = myFont
 startButton.grid(row=3, column=0, pady=65)
